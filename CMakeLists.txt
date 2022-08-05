@@ -3,4 +3,4 @@ project(aeds2_cpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(aeds2_cpp main.cpp pointers/pointers.cpp pointers/pointers.h)
+add_executable(aeds2_cpp main.cpp pointers/pointers.cpp pointers/pointers.h references/references.cpp references/references.h)
