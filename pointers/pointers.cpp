@@ -85,6 +85,26 @@ void pointerComparisons() {
     std::cout << "----------------------------------" << std::endl;
 }
 
+/**
+ * A pointer to pointer is a form of multiple indirection of a chain of pointers.
+ * When we define a pointer to a pointer, the first pointer contain the address
+ * of the second pointer, which points to the location that contains the actual value
+ * syntax: type **name;
+ */
+void pointerToPointer() {
+    int var = 3000;
+    int *ptr;
+    int **pptr;
+
+    ptr = &var;
+    pptr = &ptr;
+
+    std::cout << "Value of var: " << var << std::endl;
+    std::cout << "Value of ptr: " << *ptr << std::endl;
+    std::cout << "Value of pptr: " << **pptr << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+}
+
 void menu() {
     int option = 0;
 
@@ -95,7 +115,8 @@ void menu() {
         std::cout << " 1 - Basic Knowledge of pointers" << std::endl;
         std::cout << " 2 - Pointers Arithmetic" << std::endl;
         std::cout << " 3 - Pointers Comparisons" << std::endl;
-        std::cout << " -1 - Kill process" << std::endl;
+        std::cout << " 4 - Pointers of pointers" << std::endl;
+        std::cout << "-1 - Finish" << std::endl;
         std::cin >> option;
 
         switch (option) {
@@ -109,6 +130,10 @@ void menu() {
 
             case 3:
                 pointerComparisons();
+                break;
+
+            case 4:
+                pointerToPointer();
                 break;
 
             case -1:
