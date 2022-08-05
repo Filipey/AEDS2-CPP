@@ -7,6 +7,12 @@
 const int MAX = 3;
 int var[MAX] = {10, 100, 200};
 
+/**
+ * Every variable is a memory location and every memory location
+ * has its address defined which can be accessed using (&)
+ * A pointer is a variable whose value is the address of another variable
+ * syntax: type *name;
+ */
 void pointers() {
     int var = 20;
     int *p = &var;
@@ -16,13 +22,6 @@ void pointers() {
     std::cout << "Value of address on pointer p: " << *p << std::endl;
     std::cout << "----------------------------------" << std::endl;
 }
-
-/**
- * There are fours arithmetic operation with pointers: ++, --, +, -
- * sizeof int = 4bytes
- * int *ptr with address equals to 1000
- * ptr++ will move the pointer to address 1004
- */
 
 /**
  * sizeof int = 4bytes
