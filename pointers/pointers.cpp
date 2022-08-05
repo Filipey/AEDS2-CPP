@@ -30,7 +30,8 @@ void pointers() {
  * ptr++ will move the pointer to address 1004
  */
 void incrementPointers() {
-    int *ptr = var;
+    int vet[MAX] = {10, 100, 200};
+    int *ptr = vet;
 
     for (int i = 0; i < MAX; i++) {
         std::cout << "Address of var[" << i << "] = " << ptr << std::endl;
@@ -46,9 +47,10 @@ void incrementPointers() {
  * ptr-- will move the pointer to the address 996
  */
 void decrementPointers() {
-    int *ptr = &var[MAX - 1]; // get the address of the last element to the pointer
+    int vet[MAX] = {10, 100, 200};
+    int *ptr = &vet[MAX - 1]; // get the address of the last element to the pointer
 
-    for (int i = 0; i < MAX; i--) {
+    for (int i = MAX; i > 0; i--) {
         std::cout << "Address of var[" << i << "] = " << ptr << std::endl;
         std::cout << "Value of var[" << i << "] = " << *ptr << std::endl;
 
