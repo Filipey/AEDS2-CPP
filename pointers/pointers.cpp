@@ -187,12 +187,13 @@ void returnPointerFromFunction() {
     std::cout << "----------------------------------" << std::endl;
 }
 
-void menu() {
+void pointersMenu() {
     int option = 0;
 
     std::cout << std::endl << "READ ALL COMMENTS IN RESPECTIVE FUNCTION LESSON TO UNDERSTAND !" << std::endl;
 
     while (option != -1) {
+        std::cout << std::endl;
         std::cout << std::endl << "Choose a lesson:" << std::endl;
         std::cout << " 1 - Basic Knowledge of pointers" << std::endl;
         std::cout << " 2 - Pointers Arithmetic" << std::endl;

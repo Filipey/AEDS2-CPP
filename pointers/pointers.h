@@ -13,6 +13,6 @@ void pointerComparisons();
 void pointerToPointer();
 void pointerToFunctions();
 void returnPointerFromFunction();
-void menu();
+void pointersMenu();
 
 #endif //AEDS2_CPP_POINTERS_H
