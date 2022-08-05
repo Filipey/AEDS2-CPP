@@ -12,6 +12,7 @@ void arithmeticPointers();
 void pointerComparisons();
 void pointerToPointer();
 void pointerToFunctions();
+void returnPointerFromFunction();
 void menu();
 
 #endif //AEDS2_CPP_POINTERS_H

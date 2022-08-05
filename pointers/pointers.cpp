@@ -19,7 +19,7 @@ void pointers() {
     int *p = &var;
 
     std::cout << "Value of var: " << var << std::endl;
-    std::cout << "Addres on pointer p: " << p << std::endl;
+    std::cout << "Address on pointer p: " << p << std::endl;
     std::cout << "Value of address on pointer p: " << *p << std::endl;
     std::cout << "----------------------------------" << std::endl;
 }
@@ -118,7 +118,7 @@ void getSeconds(unsigned long *ptr) {
 /**
  * Example function passing an array as argument
  * @param arr array
- * @param size array lenght
+ * @param size array length
  * @return sum of all elements from array divided by size
  */
 double getAverage(int *arr, int size) {
@@ -148,7 +148,43 @@ void pointerToFunctions() {
 
     avg = getAverage(balance, 5);
 
-    std::cout << std::endl << "Avarage value is: " << avg << std::endl;
+    std::cout << std::endl << "Average value is: " << avg << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+}
+
+/**
+ * Aux function to return a pointer
+ * @return r = pointer/array
+ */
+int * getRandom() {
+    static int r[10];
+
+    srand( (unsigned) time(NULL));
+
+    for (int i = 0; i < 10; i++) {
+        r[i] = rand();
+        std::cout << r[i] << std::endl;
+    }
+
+    return r;
+}
+
+/**
+ * To return a pointer from function, use the following syntax:
+ * type * myFunction()
+ * It is not good idea return the address of a local variable to outside of the function.
+ * So you would have to define the local variable as static.
+ */
+void returnPointerFromFunction() {
+    int *p;
+    p = getRandom();
+
+    for(int i = 0; i < 10; i++) {
+        std:: cout << "*(p + " << i << ") : ";
+        std::cout << *(p + i) << std::endl;
+    }
+
+    std::cout << "----------------------------------" << std::endl;
 }
 
 void menu() {
@@ -163,6 +199,7 @@ void menu() {
         std::cout << " 3 - Pointers Comparisons" << std::endl;
         std::cout << " 4 - Pointers of pointers" << std::endl;
         std::cout << " 5 - Pointers to functions" << std::endl;
+        std::cout << " 6 - Return pointer from function" << std::endl;
         std::cout << "-1 - Finish" << std::endl;
         std::cin >> option;
 
@@ -185,6 +222,10 @@ void menu() {
 
             case 5:
                 pointerToFunctions();
+                break;
+
+            case 6:
+                returnPointerFromFunction();
                 break;
 
             case -1:
