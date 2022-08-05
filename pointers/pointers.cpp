@@ -185,6 +185,7 @@ void menu() {
 
             case 5:
                 pointerToFunctions();
+                break;
 
             case -1:
                 break;
