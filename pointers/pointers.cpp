@@ -3,6 +3,7 @@
 //
 
 #include "iostream"
+#include "ctime"
 
 const int MAX = 3;
 int var[MAX] = {10, 100, 200};
@@ -105,6 +106,51 @@ void pointerToPointer() {
     std::cout << "----------------------------------" << std::endl;
 }
 
+/**
+ * Example function passing a pointer as argument
+ * @param ptr pointer
+ */
+void getSeconds(unsigned long *ptr) {
+    *ptr = time(NULL);
+    return;
+}
+
+/**
+ * Example function passing an array as argument
+ * @param arr array
+ * @param size array lenght
+ * @return sum of all elements from array divided by size
+ */
+double getAverage(int *arr, int size) {
+    int i, sum = 0;
+    double avg;
+
+    for (i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    avg = double(sum) / size;
+
+    return avg;
+}
+
+/**
+ * To pass a pointer to a function, simply declare the function parameter as a pointer type.
+ * The function which can accept a pointer, can also accept an array.
+ */
+void pointerToFunctions() {
+    unsigned long sec;
+    getSeconds(&sec);
+
+    std::cout << "Number of seconds: " << sec << std::endl;
+
+    int balance[5] = {1000, 2, 3, 7, 50};
+    double avg;
+
+    avg = getAverage(balance, 5);
+
+    std::cout << std::endl << "Avarage value is: " << avg << std::endl;
+}
+
 void menu() {
     int option = 0;
 
@@ -116,6 +162,7 @@ void menu() {
         std::cout << " 2 - Pointers Arithmetic" << std::endl;
         std::cout << " 3 - Pointers Comparisons" << std::endl;
         std::cout << " 4 - Pointers of pointers" << std::endl;
+        std::cout << " 5 - Pointers to functions" << std::endl;
         std::cout << "-1 - Finish" << std::endl;
         std::cin >> option;
 
@@ -135,6 +182,9 @@ void menu() {
             case 4:
                 pointerToPointer();
                 break;
+
+            case 5:
+                pointerToFunctions();
 
             case -1:
                 break;
